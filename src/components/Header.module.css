@@ -1,0 +1,56 @@
+.header {
+  background-color: var(--bg-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: 700;
+  color: #263238; /* Based on Nexcent brand text color */
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 15px;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--brand-primary);
+}
+
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .navigation {
+    display: none; /* In a real app, we'd add a hamburger menu here */
+  }
+}

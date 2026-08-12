@@ -1,0 +1,25 @@
+.section {
+  padding: 64px 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 36px;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--text-gray);
+  font-size: 16px;
+}
+
+.logosWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+}
+
+.imagePlaceholder {
+  width: 300px;
+  height: 300px;
+  background-color: #1A202C; /* Dark color for Tesla bg */
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockTesla {
+  font-size: 120px;
+  color: white;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+}
+
+.quote {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-gray);
+  margin-bottom: 24px;
+}
+
+.author {
+  margin-bottom: 32px;
+}
+
+.name {
+  color: var(--brand-primary);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.role {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.customersRow {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.logos {
+  display: flex;
+  gap: 24px;
+  color: #A0AEC0;
+}
+
+.meetAllLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand-primary);
+  font-weight: 600;
+  font-size: 16px;
+  transition: opacity var(--transition-fast);
+}
+
+.meetAllLink:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+}
