@@ -1,5 +1,8 @@
 import React from 'react';
 import { Users, Building2, Group } from 'lucide-react';
+import { Section } from './ui/Section';
+import { Container } from './ui/Container';
+import { Typography } from './ui/Typography';
 import styles from './Community.module.css';
 
 const features = [
@@ -22,14 +25,14 @@ const features = [
 
 export default function Community() {
   return (
-    <section className="section">
-      <div className="container">
+    <Section>
+      <Container>
         <div className={styles.header}>
-          <h2 className={styles.title}>
+          <Typography variant="h2" align="center" className={styles.title}>
             Manage your entire community <br />
             in a single system
-          </h2>
-          <p className={styles.subtitle}>Who is Nexcent suitable for?</p>
+          </Typography>
+          <Typography variant="p" align="center" className={styles.subtitle}>Who is Nexcent suitable for?</Typography>
         </div>
         
         <div className={styles.grid}>
@@ -41,13 +44,13 @@ export default function Community() {
                   <div className={styles.iconBg}></div>
                   <Icon className={styles.icon} size={32} />
                 </div>
-                <h3 className={styles.cardTitle}>{feature.title}</h3>
-                <p className={styles.cardDescription}>{feature.description}</p>
+                <Typography variant="h3" align="center" className={styles.cardTitle}>{feature.title}</Typography>
+                <Typography variant="p" align="center" className={styles.cardDescription}>{feature.description}</Typography>
               </div>
             );
           })}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

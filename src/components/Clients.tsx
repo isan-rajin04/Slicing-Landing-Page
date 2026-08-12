@@ -1,14 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
+import { Section } from './ui/Section';
+import { Container } from './ui/Container';
+import { Typography } from './ui/Typography';
 import styles from './Clients.module.css';
 
 export default function Clients() {
   return (
-    <section className={styles.section}>
-      <div className="container">
+    <Section className={styles.section}>
+      <Container>
         <div className={styles.header}>
-          <h2 className={styles.title}>Our Clients</h2>
-          <p className={styles.subtitle}>We have been working with some Fortune 500+ clients</p>
+          <Typography variant="h2" align="center" className={styles.title}>Our Clients</Typography>
+          <Typography variant="p" align="center" className={styles.subtitle}>We have been working with some Fortune 500+ clients</Typography>
         </div>
         <div className={styles.logosWrapper}>
           <Image
@@ -19,7 +22,7 @@ export default function Clients() {
             style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
           />
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

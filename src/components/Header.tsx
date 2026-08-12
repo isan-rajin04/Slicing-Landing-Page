@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from './ui/Button';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -28,8 +29,8 @@ export default function Header() {
         </nav>
 
         <div className={styles.authButtons}>
-          <Link href="/login" className="btn btn-text">Login</Link>
-          <Link href="/signup" className="btn btn-primary">Sign up</Link>
+          <Button as={Link} href="/login" variant="text">Login</Button>
+          <Button as={Link} href="/signup" variant="primary">Sign up</Button>
         </div>
       </div>
     </header>

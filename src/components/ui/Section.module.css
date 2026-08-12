@@ -1,0 +1,13 @@
+.section {
+  padding: var(--spacing-4xl) var(--spacing-lg);
+  width: 100%;
+}
+
+.section-silver {
+  background-color: var(--bg-silver);
+}
+
+.section-dark {
+  background-color: var(--bg-dark);
+  color: var(--bg-silver);
+}

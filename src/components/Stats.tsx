@@ -1,5 +1,8 @@
 import React from 'react';
 import { Users, Tent, MousePointerClick, CreditCard } from 'lucide-react';
+import { Section } from './ui/Section';
+import { Container } from './ui/Container';
+import { Typography } from './ui/Typography';
 import styles from './Stats.module.css';
 
 const statsData = [
@@ -11,16 +14,16 @@ const statsData = [
 
 export default function Stats() {
   return (
-    <section className="section section-bg-silver">
-      <div className={`container ${styles.container}`}>
+    <Section variant="silver">
+      <Container className={styles.container}>
         <div className={styles.textContent}>
-          <h2 className={styles.title}>
+          <Typography variant="h2" className={styles.title}>
             Helping a local <br />
             <span className={styles.highlight}>business reinvent itself</span>
-          </h2>
-          <p className={styles.subtitle}>
+          </Typography>
+          <Typography variant="p" className={styles.subtitle}>
             We reached here with our hard work and dedication
-          </p>
+          </Typography>
         </div>
         
         <div className={styles.statsGrid}>
@@ -30,14 +33,14 @@ export default function Stats() {
               <div key={index} className={styles.statItem}>
                 <Icon className={styles.icon} size={32} />
                 <div className={styles.statInfo}>
-                  <h3 className={styles.count}>{stat.count}</h3>
-                  <p className={styles.label}>{stat.label}</p>
+                  <Typography variant="h3" className={styles.count}>{stat.count}</Typography>
+                  <Typography variant="p" className={styles.label}>{stat.label}</Typography>
                 </div>
               </div>
             );
           })}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

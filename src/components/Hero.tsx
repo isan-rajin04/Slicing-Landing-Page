@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from './ui/Button';
+import { Section } from './ui/Section';
+import { Container } from './ui/Container';
 import styles from './Hero.module.css';
 
 export default function Hero() {
   return (
-    <section className={styles.heroSection}>
-      <div className={`container ${styles.heroContainer}`}>
+    <Section variant="silver" className={styles.heroSection}>
+      <Container className={styles.heroContainer}>
         <div className={styles.textContent}>
           <h1 className={styles.title}>
             Lessons and insights <br />
@@ -16,9 +19,9 @@ export default function Hero() {
             Where to grow your business as a photographer: site or social media?
           </p>
           <div className={styles.buttonWrapper}>
-            <Link href="/register" className="btn btn-primary">
+            <Button as={Link} href="/register" variant="primary" size="lg">
               Register
-            </Link>
+            </Button>
           </div>
         </div>
         
@@ -38,7 +41,7 @@ export default function Hero() {
           <span className={styles.dot}></span>
           <span className={styles.dot}></span>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

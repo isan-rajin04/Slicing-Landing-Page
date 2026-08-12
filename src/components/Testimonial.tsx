@@ -2,12 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { Button } from './ui/Button';
+import { Section } from './ui/Section';
+import { Container } from './ui/Container';
+import { Typography } from './ui/Typography';
 import styles from './Testimonial.module.css';
 
 export default function Testimonial() {
   return (
-    <section className="section section-bg-silver">
-      <div className={`container ${styles.container}`}>
+    <Section variant="silver">
+      <Container className={styles.container}>
         <div className={styles.imageWrapper}>
           <Image
             src="/tesla-logo.jpg"
@@ -19,18 +23,14 @@ export default function Testimonial() {
         </div>
         
         <div className={styles.content}>
-          <p className={styles.quote}>
-            Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus 
-            tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida 
-            enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie 
-            mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse 
-            eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, 
-            vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum 
-            id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
-          </p>
+          <blockquote className={styles.quote}>
+            Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus
+            tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida
+            enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie.
+          </blockquote>
           <div className={styles.author}>
-            <h4 className={styles.name}>Tim Smith</h4>
-            <p className={styles.role}>British Dragon Boat Racing Association</p>
+            <Typography variant="h4" color="dark" className={styles.name}>Tim Smith</Typography>
+            <Typography variant="p" color="light" className={styles.role}>British Dragon Boat Racing Association</Typography>
           </div>
           
           <div className={styles.customersRow}>
@@ -43,13 +43,13 @@ export default function Testimonial() {
                 style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
               />
             </div>
-            <Link href="/customers" className={styles.meetAllLink}>
+            <Button as={Link} href="/customers" variant="text" className={styles.meetAllLink}>
               Meet all customers
               <ArrowRight size={20} />
-            </Link>
+            </Button>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

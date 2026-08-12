@@ -1,6 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from './ui/Button';
+import { Section } from './ui/Section';
+import { Container } from './ui/Container';
+import { Typography } from './ui/Typography';
 import styles from './FeatureSplit.module.css';
 
 interface FeatureSplitProps {
@@ -15,8 +19,8 @@ interface FeatureSplitProps {
 
 export default function FeatureSplit({ title, description, buttonText, buttonLink, imageSrc, imageAlt, reverse }: FeatureSplitProps) {
   return (
-    <section className="section">
-      <div className={`container ${styles.container} ${reverse ? styles.reverse : ''}`}>
+    <Section>
+      <Container className={`${styles.container} ${reverse ? styles.reverse : ''}`}>
         <div className={styles.imageWrapper}>
           <Image
             src={imageSrc}
@@ -28,13 +32,13 @@ export default function FeatureSplit({ title, description, buttonText, buttonLin
         </div>
 
         <div className={styles.textContent}>
-          <h2 className={styles.title}>{title}</h2>
-          <p className={styles.description}>{description}</p>
-          <Link href={buttonLink} className="btn btn-primary">
+          <Typography variant="h2" className={styles.title}>{title}</Typography>
+          <Typography variant="p" className={styles.description}>{description}</Typography>
+          <Button as={Link} href={buttonLink} variant="primary">
             {buttonText}
-          </Link>
+          </Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

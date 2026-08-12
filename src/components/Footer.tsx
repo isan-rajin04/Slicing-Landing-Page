@@ -2,12 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Camera, Globe, AtSign, Play, Send } from 'lucide-react';
+import { Container } from './ui/Container';
+import { Typography } from './ui/Typography';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className={`section-bg-dark ${styles.footer}`}>
-      <div className={`container ${styles.container}`}>
+    <footer className={`section-bg-dark ${styles.footer}`} role="contentinfo">
+      <Container className={styles.container}>
         
         <div className={styles.brandInfo}>
           <Link href="/" className={styles.logo}>
@@ -20,48 +22,49 @@ export default function Footer() {
             />
           </Link>
           <div className={styles.copyright}>
-            <p>Copyright © 2020 Nexcent ltd.</p>
-            <p>All rights reserved</p>
+            <Typography variant="p" color="white">Copyright © 2020 Nexcent ltd.</Typography>
+            <Typography variant="p" color="white">All rights reserved</Typography>
           </div>
-          <div className={styles.socials}>
-            <Link href="#" className={styles.socialIcon}><Camera size={20} /></Link>
-            <Link href="#" className={styles.socialIcon}><Globe size={20} /></Link>
-            <Link href="#" className={styles.socialIcon}><AtSign size={20} /></Link>
-            <Link href="#" className={styles.socialIcon}><Play size={20} /></Link>
-          </div>
+          <nav aria-label="Social links" className={styles.socials}>
+            <Link href="#" className={styles.socialIcon} aria-label="Instagram"><Camera size={20} aria-hidden="true" /></Link>
+            <Link href="#" className={styles.socialIcon} aria-label="Website"><Globe size={20} aria-hidden="true" /></Link>
+            <Link href="#" className={styles.socialIcon} aria-label="Twitter"><AtSign size={20} aria-hidden="true" /></Link>
+            <Link href="#" className={styles.socialIcon} aria-label="YouTube"><Play size={20} aria-hidden="true" /></Link>
+          </nav>
         </div>
 
         <div className={styles.linksSection}>
-          <div className={styles.linkGroup}>
-            <h4 className={styles.groupTitle}>Company</h4>
+          <nav aria-label="Company links">
+            <Typography variant="h4" color="white" className={styles.groupTitle}>Company</Typography>
             <Link href="#" className={styles.link}>About us</Link>
             <Link href="#" className={styles.link}>Blog</Link>
             <Link href="#" className={styles.link}>Contact us</Link>
             <Link href="#" className={styles.link}>Pricing</Link>
             <Link href="#" className={styles.link}>Testimonials</Link>
-          </div>
+          </nav>
           
-          <div className={styles.linkGroup}>
-            <h4 className={styles.groupTitle}>Support</h4>
+          <nav aria-label="Support links">
+            <Typography variant="h4" color="white" className={styles.groupTitle}>Support</Typography>
             <Link href="#" className={styles.link}>Help center</Link>
             <Link href="#" className={styles.link}>Terms of service</Link>
             <Link href="#" className={styles.link}>Legal</Link>
             <Link href="#" className={styles.link}>Privacy policy</Link>
             <Link href="#" className={styles.link}>Status</Link>
-          </div>
+          </nav>
           
           <div className={styles.newsletter}>
-            <h4 className={styles.groupTitle}>Stay up to date</h4>
+            <Typography variant="h4" color="white" className={styles.groupTitle}>Stay up to date</Typography>
             <div className={styles.inputWrapper}>
-              <input type="email" placeholder="Your email address" className={styles.input} />
-              <button className={styles.sendButton}>
-                <Send size={16} />
+              <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+              <input id="newsletter-email" type="email" placeholder="Your email address" className={styles.input} />
+              <button className={styles.sendButton} aria-label="Subscribe to newsletter">
+                <Send size={16} aria-hidden="true" />
               </button>
             </div>
           </div>
         </div>
 
-      </div>
+      </Container>
     </footer>
   );
 }

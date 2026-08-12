@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { Section } from './ui/Section';
+import { Container } from './ui/Container';
+import { Typography } from './ui/Typography';
 import styles from './MarketingBlog.module.css';
 
 const blogs = [
@@ -21,15 +24,15 @@ const blogs = [
 
 export default function MarketingBlog() {
   return (
-    <section className="section">
-      <div className="container">
+    <Section>
+      <Container>
         <div className={styles.header}>
-          <h2 className={styles.title}>Caring is the new marketing</h2>
-          <p className={styles.subtitle}>
+          <Typography variant="h2" align="center" className={styles.title}>Caring is the new marketing</Typography>
+          <Typography variant="p" align="center" className={styles.subtitle}>
             The Nexcent blog is the best place to read about the latest membership insights,
             trends and more. See who is joining the community, read about how our community
             are increasing their membership income and lot&apos;s more.
-          </p>
+          </Typography>
         </div>
 
         <div className={styles.grid}>
@@ -51,16 +54,16 @@ export default function MarketingBlog() {
                 style={{ backgroundColor: blog.bgColor }}
               ></div>
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{blog.title}</h3>
+                <Typography variant="h3" className={styles.cardTitle}>{blog.title}</Typography>
                 <Link href={`/blog/${index}`} className={styles.readmore}>
-                  Readmore
+                  Read more
                   <ArrowRight size={20} />
                 </Link>
               </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
