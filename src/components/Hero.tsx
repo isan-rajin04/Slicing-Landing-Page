@@ -23,21 +23,14 @@ export default function Hero() {
         </div>
         
         <div className={styles.illustrationWrapper}>
-          <div className={styles.placeholderIllustration}>
-            {/* In a real project, this would be an <Image> tag with the hero graphic */}
-            <div className={styles.placeholderScreen}>
-              <div className={styles.screenHeader}>
-                <span className={styles.dot}></span>
-                <span className={styles.dot}></span>
-                <span className={styles.dot}></span>
-              </div>
-              <div className={styles.screenBody}>
-                <div className={styles.mockBar}></div>
-                <div className={styles.mockChart}></div>
-              </div>
-            </div>
-            <div className={styles.placeholderPerson}></div>
-          </div>
+          <Image
+            src="/hero-illustration.png"
+            alt="Hero Illustration"
+            width={500}
+            height={500}
+            priority
+            style={{ objectFit: 'contain', width: '100%', height: 'auto', maxWidth: '500px' }}
+          />
         </div>
         
         <div className={styles.carouselDots}>
