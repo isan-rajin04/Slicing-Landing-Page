@@ -60,8 +60,14 @@
 
 .logos {
   display: flex;
-  gap: 24px;
-  color: #A0AEC0;
+  gap: 32px;
+  align-items: center;
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .meetAllLink {

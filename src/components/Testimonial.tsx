@@ -35,13 +35,17 @@ export default function Testimonial() {
           
           <div className={styles.customersRow}>
             <div className={styles.logos}>
-              <Image
-                src="/clients-2.png"
-                alt="Client Logos"
-                width={500}
-                height={40}
-                style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
-              />
+              {[1, 2, 3, 4, 5, 6].map((num) => (
+                <div key={num} className={styles.logoItem}>
+                  <Image
+                    src={`/logo-${num}.png`}
+                    alt={`Client Logo ${num}`}
+                    width={40}
+                    height={40}
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+              ))}
             </div>
             <Button as={Link} href="/customers" variant="text" className={styles.meetAllLink}>
               Meet all customers

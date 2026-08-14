@@ -14,13 +14,17 @@ export default function Clients() {
           <Typography variant="p" align="center" className={styles.subtitle}>We have been working with some Fortune 500+ clients</Typography>
         </div>
         <div className={styles.logosWrapper}>
-          <Image
-            src="/clients-2.png"
-            alt="Our Client Logos"
-            width={960}
-            height={60}
-            style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
-          />
+          {[1, 2, 3, 4, 5, 6, 7].map((num) => (
+            <div key={num} className={styles.logoItem}>
+              <Image
+                src={`/logo-${num}.png`}
+                alt={`Client Logo ${num}`}
+                width={50}
+                height={50}
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+          ))}
         </div>
       </Container>
     </Section>

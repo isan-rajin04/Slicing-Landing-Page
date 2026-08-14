@@ -20,6 +20,15 @@
 
 .logosWrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
