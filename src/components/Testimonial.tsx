@@ -29,7 +29,7 @@ export default function Testimonial() {
             enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie.
           </blockquote>
           <div className={styles.author}>
-            <Typography variant="h4" color="dark" className={styles.name}>Tim Smith</Typography>
+            <Typography variant="h4" color="primary" className={styles.name}>Tim Smith</Typography>
             <Typography variant="p" color="light" className={styles.role}>British Dragon Boat Racing Association</Typography>
           </div>
           

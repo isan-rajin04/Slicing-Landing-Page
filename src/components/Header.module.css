@@ -33,9 +33,13 @@
 
 .navLink {
   color: var(--text-dark);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 15px;
   transition: color var(--transition-fast);
+}
+
+.active {
+  font-weight: 600;
 }
 
 .navLink:hover {

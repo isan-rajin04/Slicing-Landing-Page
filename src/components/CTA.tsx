@@ -11,7 +11,7 @@ export default function CTA() {
   return (
     <Section variant="silver" className={styles.ctaSection}>
       <Container>
-        <Typography variant="h2" align="center" className={styles.title}>
+        <Typography variant="h1" align="center" className={styles.title}>
           Pellentesque suscipit <br />
           fringilla libero eu.
         </Typography>

@@ -20,7 +20,7 @@ export default function Header() {
         </Link>
 
         <nav className={styles.navigation}>
-          <Link href="#home" className={styles.navLink}>Home</Link>
+          <Link href="#home" className={`${styles.navLink} ${styles.active}`}>Home</Link>
           <Link href="#service" className={styles.navLink}>Service</Link>
           <Link href="#feature" className={styles.navLink}>Feature</Link>
           <Link href="#product" className={styles.navLink}>Product</Link>

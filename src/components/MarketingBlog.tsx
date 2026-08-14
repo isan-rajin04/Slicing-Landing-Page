@@ -7,18 +7,18 @@ import { Container } from './ui/Container';
 import { Typography } from './ui/Typography';
 import styles from './MarketingBlog.module.css';
 
-const blogs = [
+const blogPosts = [
   {
     title: 'Creating Streamlined Safeguarding Processes with OneRen',
-    bgColor: '#b7c9a8',
+    image: '/blog-1.jpg'
   },
   {
     title: 'What are your safeguarding responsibilities and how can you manage them?',
-    bgColor: '#c4b49e',
+    image: '/blog-2.jpg'
   },
   {
     title: 'Revamping the Membership Model with Triathlon Australia',
-    bgColor: '#a8b8c9',
+    image: '/blog-3.jpg'
   }
 ];
 
@@ -47,14 +47,19 @@ export default function MarketingBlog() {
             />
           </div>
 
-          {blogs.map((blog, index) => (
+          {blogPosts.map((post, index) => (
             <div key={index} className={styles.card}>
-              <div
-                className={styles.imagePlaceholder}
-                style={{ backgroundColor: blog.bgColor }}
-              ></div>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={400}
+                  height={300}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: 'var(--radius-md)' }}
+                />
+              </div>
               <div className={styles.cardContent}>
-                <Typography variant="h3" className={styles.cardTitle}>{blog.title}</Typography>
+                <Typography variant="h3" className={styles.cardTitle}>{post.title}</Typography>
                 <Link href={`/blog/${index}`} className={styles.readmore}>
                   Read more
                   <ArrowRight size={20} />
